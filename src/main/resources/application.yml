@@ -1,0 +1,14 @@
+businessProps:
+#  outputPath: C:/Users/Administrator/
+#  outputPath: /Users/panminqiang/Downloads/
+  outputPath: pack/
+  statIntervalInSec: 5
+  appInfoList:
+    -
+      path: teligen-machine-monitor-be-0.0.1-SNAPSHOT-exec.jar
+      name: 机器监控
+      startCmd: java -jar XXX.jar
+    -
+      path: somewhere
+      name: absentSample
+      startCmd: someCmd

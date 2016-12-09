@@ -1,0 +1,61 @@
+Spring Boot后台只提供REST服务（根据前台提供的URL返回Json数据）
+痛点（分3层）：
+1，JPA层提供CRUD，分页和排序操作
+2，Servie层供开发人员编写业务处理逻辑（可以使用JPA层提供的Reporitory服务）
+3，REST（Jersey）层管理对外的提供的REST服务（可以使用前两层提供的服务）
+爽点：
+1，配置，代码非常简洁
+2，提供了三种类型的URL：actuator（获取系统数据），jpa rest（获取DAO服务接口），service rest
+3，提供的DAL browser可以方便管理URL
+待解决问题：
+1，针对条件查询，可以使用JPA的CriteriaQuery／Example，但需要确定前后台的接口规范
+2，确定Service REST的json接口规范，可以参考jpa rest的DAL结构
+
+**********
+
+Satalite的Spring Boot后台功能包括：
+1，系统数据采集
+	a，系统资源（CPU，内存，磁盘，网络）
+	b，系统软硬件环境
+2，JVM线程级别数据采集，并写入InfluxDB
+	a，应用列表
+	b，应用的端口，运行参数，所占CPU，内存，读写IO，
+3，后台的一些操作
+	a，重启应用
+	b，线程dump
+	c，堆dump
+	d，打开/关闭GC log
+	e，应用里实例所占空间的排名
+	f，打包
+
+Satalite的Vue2前台功能包括：
+1，系统信息页面
+	a，基本信息
+	b，CPU
+	c，内存
+	d，磁盘
+	f，IO
+2，应用列表
+3，Grafana指标展现
+
+**********
+	
+TODO：
+文档
+上传到git
+1，功能：
+	a，怎么方便打包及发布
+	b，定制Grafana面板
+	c，评估是否采集/分析/保存线程相关数据
+	d，采集HTTP请求相关数据
+	e，采集数据库相关数据
+	f，支持多JVM支持及管控
+	g，支持多JDK版本
+	h，支持多系统（包含软件）版本
+	i，分析，诊断及建议（Spark MLlib）
+2，技术
+	a，研究如何构建打包Vue2前台支持router
+	b，更加深入研究vue2，看有没有适合的框架
+	c，Grafana配置技巧
+	d，Spring Boot后台Rest框架深入研究，接口规范等
+	
