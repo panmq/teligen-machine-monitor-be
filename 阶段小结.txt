@@ -41,8 +41,6 @@ Satalite的Vue2前台功能包括：
 **********
 	
 TODO：
-文档
-上传到git
 1，功能：
 	a，怎么方便打包及发布
 	b，定制Grafana面板

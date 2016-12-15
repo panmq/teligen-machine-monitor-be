@@ -30,7 +30,7 @@ public class CmdUtils {
 	// jmap -histo:live <PID> 分析堆中存活对象排行。 也可使用 jcmd <PID> GC.class_histogram
 	public static String CMD_JMAP = "jmap -histo:live ";
 
-	// jstat -gc <PID> 1000 1 以一秒为采样周期，输出一次IO使用统计信息
+	// jstat -gc <PID> 1000 1 以一秒为采样周期，输出一次内存及GC的统计信息
 	public static String CMD_JSTAT_GC = "jstat -gc <PID> <SIIS> 1";
 
 	// pidstat --u -r -d 1 1 以一秒为采样周期，输出所有PID的CPU,内存和IO使用统计信息（Linux 才有）
@@ -51,10 +51,10 @@ public class CmdUtils {
 	// jinfo -flag +PrintGC <PID>开启进程的GC日志
 	public static String CMD_JINFO_FLAG_PRINT_GC_ON = "jinfo -flag +PrintGC ";
 	
-	// jinfo -flag -PrintGCDetails <PID>开启进程的GC日志
+	// jinfo -flag -PrintGCDetails <PID>关闭进程的GC日志
 	public static String CMD_JINFO_FLAG_PRINT_GC_DETAILS_OFF = "jinfo -flag -PrintGCDetails ";
 
-	// jinfo -flag -PrintGC <PID>开启进程的GC日志
+	// jinfo -flag -PrintGC <PID>关闭进程的GC日志
 	public static String CMD_JINFO_FLAG_PRINT_GC_OFF = "jinfo -flag -PrintGC ";
 	
 	// 使用jcmd <PID> help能够获取jvm进程诊断命令
